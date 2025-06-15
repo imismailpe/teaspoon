@@ -21,7 +21,7 @@ export const recordSchema = async (input:string) => {
     model: google("gemini-2.0-flash"),
     prompt: input,
     schema: recordRecipeSchema,
-    system: "You are a very good chef who knows all languages. You know how to extract ingredients and methods from a voice recording describing the recipe."
+    system: "You are a very good chef who can convert recipes into english from multiple languages. You know how to extract ingredients and methods from a voice recording describing the recipe."
   });
   return object.data;
 }
