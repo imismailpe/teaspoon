@@ -5,15 +5,15 @@ import { z } from "zod";
 const recordRecipeSchema = z.object({
   data: z.object({
     title: z.string(),
-    method: z.array(z.string()),
+    preparation: z.array(z.string()),
     ingredients: z.array(z.object({
-      id: z.number(),
+      // id: z.number(),
+      name: z.string(),
       quantity: z.string()
     })),
     labels: z.array(z.string()),
     author: z.string(),
     cooking_time: z.string(),
-
   })
 });
 export const recordSchema = async (input:string) => {
