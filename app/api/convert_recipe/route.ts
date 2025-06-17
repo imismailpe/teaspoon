@@ -13,5 +13,8 @@ export async function POST(req: Request, res: Response) {
     }
     const blob = await readableStreamToBlob(req.body);
     const result = await transformToRecipe(blob);
+    if (!result.success) {
+        return new Response("Failed to convert recipe", { status: 500 });
+    }
     return new Response(JSON.stringify(result));
 }
