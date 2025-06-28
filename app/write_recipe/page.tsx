@@ -66,6 +66,7 @@ export default function WriteRecipe() {
           <button
             onClick={onSubmitDish}
             className="mt-4 w-fit bg-blue-500 text-white px-2 rounded-md hover:bg-blue-600"
+            disabled={processing}
           >
             {processing ? "Loading.." : "Generate Recipe"}
           </button>
