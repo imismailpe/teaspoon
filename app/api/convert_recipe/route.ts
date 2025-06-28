@@ -2,23 +2,20 @@ import { NextResponse } from "next/server";
 import { transformToRecipe } from "../../mcps/recordRecipe";
 import { createClient } from "@deepgram/sdk";
 
-export async function POST(req: Request, res: Response) {
-  async function readableStreamToBlob(
-    stream: ReadableStream,
-    mimeType = "audio/wav"
-  ): Promise<Blob> {
-    const response = new Response(stream);
-    const blob = await response.blob();
-    return blob;
-    // return new Blob([blob], { type: mimeType });
-  }
+export async function POST(req: Request) {
+  //   async function readableStreamToBlob(
+  //     stream: ReadableStream,
+  //     mimeType = "audio/wav"
+  //   ): Promise<Blob> {
+  //     const response = new Response(stream);
+  //     const blob = await response.blob();
+  //     return blob;
+  //     // return new Blob([blob], { type: mimeType });
+  //   }
   const voiceInput = req.body;
   if (!voiceInput) {
     return new Response("No voice input provided", { status: 400 });
   }
-
-  //   const blob = await readableStreamToBlob(req.body);
-  // const buffer = Buffer.from(await blob.arrayBuffer());
 
   const blob = await new Response(req.body!).blob();
   const buffer = Buffer.from(await blob.arrayBuffer());
@@ -41,7 +38,6 @@ export async function POST(req: Request, res: Response) {
 
   const data =
     result?.results?.channels?.[0]?.alternatives?.[0]?.transcript ?? "";
-  console.log("after deepgram", data);
 
   const resultData = await transformToRecipe(data);
   return NextResponse.json({ result: resultData });

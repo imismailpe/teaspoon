@@ -3,19 +3,13 @@ import React from "react";
 import Card from "../components/Card";
 import RecipeCard from "../components/RecipeCard";
 
-const RECIPE = {
-  title: "Spanish Omlette",
-  preparation: ["lorem ipsum dolor lorem lorem", "Cook well", "Serve hot"],
-  ingredients: [
-    { name: "Egg", quantity: "3" },
-    { name: "Onion", quantity: "2 big" },
-    { name: "Tomato", quantity: "2 small" },
-    { name: "salt", quantity: "a pinch" },
-  ],
-  cooking_time: "5 mins",
-  author: "Ismail",
+type RecipeType = {
+  title: string;
+  preparation: string[];
+  ingredients: { name: string; quantity: string }[];
+  cooking_time: string;
+  author: string;
 };
-type RecipeType = typeof RECIPE;
 function Record() {
   const [recording, setRecording] = React.useState(false);
   const [recordedAudio, setRecordedAudio] = React.useState<Blob[]>([]);

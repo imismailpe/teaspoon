@@ -1,5 +1,5 @@
 import { google } from "@ai-sdk/google";
-import { generateObject, generateText } from "ai";
+import { generateObject } from "ai";
 import { z } from "zod";
 
 const recordRecipeSchema = z.object({
