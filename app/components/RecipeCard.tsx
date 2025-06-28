@@ -53,7 +53,7 @@ export default function RecipeCard({ recipe }: { recipe: RecipeType }) {
         <p className='mt-2 font-semibold'>Preparation:</p>
         <div className=''>{recipe?.preparation.map((prep, index) => <div key={index}>{prep}</div>)}</div>
       </Card>
-      {showNotification ? <div className='fixed bottom-12 right-12 bg-green-600 p-4 rounded-lg shadow-lg'>
+      {showNotification ? <div className='fixed bottom-12 right-12 bg-green-600 p-4 rounded-lg shadow-lg text-white'>
         Copied to clipboard
       </div> : null}
     </>
