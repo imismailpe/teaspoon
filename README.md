@@ -1,3 +1,10 @@
+Teaspoon app is for converting your memory of a delicious recipe into shareable format. 
+
+Functionalities:
+-  Rrecord your voice and convert it to formatted text.(Disabled on the deployed url to prevent api key misuse).
+-  Get a recipe from internet. This app works with the help of Gemini AI.
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
