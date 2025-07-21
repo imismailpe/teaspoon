@@ -1,6 +1,6 @@
 Teaspoon app is for converting your memory of a delicious recipe into shareable format. This app works with the help of Gemini AI.
 
-Functionalities:
+## Functionalities:
 -  Rrecord your voice and convert it to formatted text.(Disabled on the deployed url to prevent api key misuse).
 -  Get a recipe from internet.
 
@@ -9,7 +9,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, Add your Gemini api keys to env
+
+Run the development server:
 
 ```bash
 npm run dev
