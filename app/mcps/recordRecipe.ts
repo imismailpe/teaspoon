@@ -20,7 +20,7 @@ const recordRecipeSchema = z.object({
   }),
 });
 export const transformToRecipe = async (input: string) => {
-  const model = google("gemini-2.5-flash-preview-04-17");
+  const model = google("gemini-2.5-flash");
   const { object } = await generateObject({
     model: model,
     schema: recordRecipeSchema,
